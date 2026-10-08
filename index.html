@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ICD Coding Query – Offline Edition · Project Home Page</title>
+<style>
+  :root{--bg:#f6f8fb;--card:#fff;--ink:#16202c;--ink2:#4a5666;--ink3:#7b8798;--line:#e2e8f0;
+        --blue:#1f6feb;--blue-bg:#eaf2ff;--green:#157f4b;--green-bg:#e9f8ef;--amber:#a26800;--amber-bg:#fff7e6}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:"Segoe UI","Microsoft YaHei","PingFang SC",Helvetica,Arial,sans-serif;line-height:1.7;font-size:15.5px}
+  .wrap{max-width:940px;margin:0 auto;padding:34px 22px 70px}
+  header{border-bottom:2px solid var(--line);padding-bottom:16px;margin-bottom:24px}
+  h1{font-size:27px;margin:0 0 4px;letter-spacing:.2px}
+  .zh{color:var(--ink3);font-size:16px;margin:0 0 10px}
+  .ver{display:inline-block;font-size:12.5px;font-weight:700;color:var(--blue);
+       background:var(--blue-bg);border-radius:20px;padding:3px 12px;margin-right:8px}
+  h2{font-size:18px;margin:30px 0 10px;padding-left:11px;border-left:4px solid var(--blue)}
+  p{margin:8px 0}
+  ul{margin:8px 0;padding-left:22px}
+  li{margin:5px 0}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:#f2f6fb;width:210px;color:var(--ink2);font-weight:700}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:14px 0}
+  .dl{background:var(--green-bg);border:1px solid #bde5cd;border-radius:12px;padding:16px 20px;margin:14px 0}
+  .dl a{color:var(--green);font-weight:700}
+  .note{background:var(--amber-bg);border-left:4px solid #e0a83a;border-radius:0 10px 10px 0;
+        padding:12px 16px;margin:14px 0;font-size:14.5px}
+  code{background:#f1f4f8;padding:1px 6px;border-radius:4px;font-family:Consolas,Menlo,monospace;font-size:13px}
+  footer{margin-top:36px;border-top:1px solid var(--line);padding-top:14px;color:var(--ink3);font-size:13.5px}
+  .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;text-align:center}
+  .kpi b{display:block;font-size:20px;color:var(--blue)}
+  .kpi span{font-size:13px;color:var(--ink3)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>ICD Coding Query – Offline Edition</h1>
+  <p class="zh">ICD 编码查询 · 离线版 —— 面向病案编码员的离线乱序容忍检索工具</p>
+  <span class="ver">version 8.4</span>
+  <span class="ver">offline · no installation · zero cost</span>
+</header>
+
+<h2>1. What this software is</h2>
+<p>A self-contained, fully offline retrieval tool for clinical coding. It integrates four coding systems and tolerates
+<i>disordered</i>, <i>fragmentary</i> queries — the way coders actually remember disease and procedure names.</p>
+<ul>
+  <li>One HTML page plus a data folder. Double-click to run. No install, no network, no server, no GPU.</li>
+  <li>Three exact tiers plus one fallback tier: exact substring → two-character fragments → order-free single characters
+      → partial-coverage fallback (v8.4).</li>
+  <li>The fallback tier is used only when no exact hit exists. It ranks candidates by the fraction of query characters
+      found in the entry name, returns at most the 10 closest matches, and marks them clearly as fuzzy candidates for
+      reference only. It never displaces an exact match.</li>
+  <li>Displays the standard lookup pathway (lead term → code), and cross-references the Chinese national clinical
+      version against the medical insurance version, flagging mismatches ("grey codes") automatically.</li>
+  <li>No training, no annotation, no external model: all matching is deterministic string logic over local tables.</li>
+</ul>
+
+<div class="grid">
+  <div class="kpi"><b>282,015</b><span>coded entries</span></div>
+  <div class="kpi"><b>4</b><span>coding systems</span></div>
+  <div class="kpi"><b>~35 ms</b><span>full-library search</span></div>
+</div>
+
+<h2>2. Requirements</h2>
+<table>
+  <tr><th>Operating system</th><td>Windows 7 / 10 / 11 (32- or 64-bit)</td></tr>
+  <tr><th>Browser</th><td>Chrome 60+ or Edge 79+ (any Chromium-based browser). No plug-ins.</td></tr>
+  <tr><th>Memory / disk</th><td>2 GB RAM; about 60 MB disk space (or a USB stick)</td></tr>
+  <tr><th>Network</th><td>None required. The software runs with the network adapter disabled.</td></tr>
+  <tr><th>Privileges</th><td>No administrator rights needed</td></tr>
+</table>
+
+<h2>3. How to obtain and run it</h2>
+<div class="dl">
+  <p><b>Download:</b> <a href="ICD_Coding_Query_v8.4.zip">ICD_Coding_Query_v8.4.zip</a> (about 8 MB, unpacks to about 60 MB)</p>
+  <p>Unzip anywhere (local disk or USB stick) and open <code>index.html</code> in Chrome or Edge.
+     A convenience launcher <code>启动工具.bat</code> is included.</p>
+</div>
+<div class="note">
+  <b>During peer review</b> an anonymised copy of the software is provided as supplementary material so that reviewers can
+  test it without contacting the authors. After publication the version above is the one described in the article.
+</div>
+<p>The tool is intended to be used before the DRG/DIP grouper, i.e. at the moment of coding, so that a coder can see the
+correct code — and any version mismatch — before the record is grouped, rather than discovering the error at post-hoc audit.</p>
+
+<h2>4. Version history</h2>
+<table>
+  <tr><th>8.4 (current)</th><td>Adds a <b>partial-coverage fallback</b> tier for queries that match no entry exactly,
+      with output truncated to the 10 closest candidates. On the external clinical-name set this raised Top-1 from
+      56.4% to 62.4% and Top-10 from 66.7% to 79.7%, with zero rank regressions across 11,331 evaluated queries.
+      Chinese and English interfaces updated together.</td></tr>
+  <tr><th>8.3</th><td>Within-tier re-ranking: candidates sharing the same score are re-ordered by character-level
+      similarity between the query and the candidate name (0.6 × bigram Dice + 0.4 × unigram Dice). Recall is unchanged.</td></tr>
+  <tr><th>8.2 / earlier</th><td>Three-level disorder-tolerant matching; dual-version cross-reference; digitised
+      lead-term pathways; favourites and history.</td></tr>
+</table>
+
+<h2>5. Coding data resources</h2>
+<table>
+  <tr><th>ICD-10</th><td>Extended clinical code library and coding-book entries (incl. a digitised lead-term index)</td></tr>
+  <tr><th>ICD-9-CM-3</th><td>Procedure code library and coding-book entries</td></tr>
+  <tr><th>ICD-11</th><td>Entries with mappings to ICD-10 and synonyms</td></tr>
+  <tr><th>ICD-O / morphology</th><td>Morphology codes and the corresponding morphology tab</td></tr>
+</table>
+<p>The classification codes and their titles are public classification standards. This software redistributes them only as
+processed electronic indexes.</p>
+
+<h2>6. License</h2>
+<div class="card">
+  <p>Released under the <b>Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)</b>.</p>
+  <p>Any individual, hospital, educational institution or research organisation may obtain, use, copy and redistribute the
+     software free of charge for personal, educational, research and non-commercial clinical purposes, permanently and
+     offline, provided that attribution is retained, this license is kept intact, and the software is not used
+     commercially without prior written permission from the corresponding author.</p>
+  <p>The software is provided "as is", without warranty of any kind. Retrieval results are for reference only; the final
+     coding decision must be made by a qualified coder according to the coding rules in force.</p>
+</div>
+
+<h2>7. How to cite</h2>
+<div class="card">
+  <p>Duan J. <i>Development and evaluation of an offline disorder-tolerant fragment matching system for clinical coding
+     retrieval.</i> Manuscript in preparation / submitted to <i>BMC Medical Informatics and Decision Making</i> (Software article).</p>
+  <p style="color:#7b8798;font-size:14px">This section will be updated with the DOI once the article is published.</p>
+</div>
+
+<h2>8. Contact</h2>
+<table>
+  <tr><th>Corresponding author</th><td>Jun Duan (段俊), Department of Medical Records and Statistics,
+      Peking University Shenzhen Hospital, Shenzhen, Guangdong, China</td></tr>
+  <tr><th>E-mail</th><td>Duanjunywq@163.com</td></tr>
+  <tr><th>Commercial licensing</th><td>Written permission required; please contact the corresponding author.</td></tr>
+</table>
+
+<footer>
+  Project home page for the software described in the manuscript. Software version 8.4. Last updated 2026-09-29.
+</footer>
+
+</div>
+</body>
+</html>

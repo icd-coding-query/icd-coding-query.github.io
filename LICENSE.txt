@@ -1,0 +1,52 @@
+ICD Coding Query – Offline Edition (ICD编码查询-离线版)
+Software License
+
+Copyright (c) 2026 Department of Medical Records and Statistics,
+Peking University Shenzhen Hospital, Shenzhen, China.
+
+This software is distributed under the Creative Commons
+Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0).
+Full license text: https://creativecommons.org/licenses/by-nc/4.0/
+
+中文摘要（以英文原版条款为准）
+========================================
+
+1. 授权范围
+   任何个人、医院、教育机构和科研组织均可免费获取、使用、复制和
+   再分发本软件，可用于个人学习、教学、科研和非商业性临床用途，
+   永久离线使用，无功能限制、无使用期限。
+
+2. 使用条件
+   (a) 使用或再分发时须保留本许可声明与原作者署名；
+   (b) 不得将本软件用于商业用途；商业用途须事先取得通讯作者的
+       书面许可；
+   (c) 再分发时不得更改本许可条款。
+
+3. 码表数据说明
+   软件内置的 ICD-10、ICD-9-CM-3、ICD-11、ICD-O 分类码及其标题
+   属于公共分类标准；本软件仅以加工后的电子索引形式对其进行组织
+   与展示。
+
+4. 免责声明
+   本软件按"现状"提供，不附带任何形式的明示或默示保证，包括但不
+   限于适销性、特定用途适用性的保证。在任何情况下，作者均不对因
+   使用本软件而产生的任何索赔、损害或其他责任负责。软件给出的编
+   码检索结果仅供查询参考，最终编码决定应由具备资质的编码人员依
+   据现行编码规则作出。
+
+英文摘要（Summary）
+========================================
+
+Permission is granted to any individual, hospital, educational
+institution or research organization to obtain, use, copy and
+redistribute this software free of charge for personal, educational,
+research and non-commercial clinical purposes, permanently and
+offline, provided that attribution is retained, this license is kept
+intact, and the software is not used commercially without prior
+written permission from the corresponding author. The bundled ICD
+codes and titles are public classification standards; the software
+redistributes them only as processed electronic indexes. The software
+is provided "as is", without warranty of any kind.
+
+Contact: corresponding author, Department of Medical Records and
+Statistics, Peking University Shenzhen Hospital.

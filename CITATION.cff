@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the article below."
+title: "ICD Coding Query - Offline Edition"
+abstract: "A self-contained, fully offline, disorder-tolerant fragment-matching retrieval system for clinical coding."
+type: software
+version: "8.4"
+license: CC-BY-NC-4.0
+authors:
+  - family-names: "Duan"
+    given-names: "Jun"
+    affiliation: "Department of Medical Records and Statistics, Peking University Shenzhen Hospital"
+preferred-citation:
+  type: article
+  title: "Development and evaluation of an offline disorder-tolerant fragment matching system for clinical coding retrieval"
+  authors:
+    - family-names: "Duan"
+      given-names: "Jun"
+  journal: "BMC Medical Informatics and Decision Making"
